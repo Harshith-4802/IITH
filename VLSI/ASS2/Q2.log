@@ -1,0 +1,16 @@
+Circuit: * C:\Users\Harshith\Desktop\IITH\VLSI\ASS2\Q2.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+.step s=1
+.step s=2
+.step s=3
+.step s=4
+.step s=5

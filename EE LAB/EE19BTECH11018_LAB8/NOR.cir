@@ -1,0 +1,24 @@
+NOR GATE
+
+*1 = Vin1
+*2 = Vin2
+*3 = Output
+*4 = Vdd
+
+Vin1 1 0 DC 5 PULSE(0 5 0 0.1ns 0.1ns 50ns 100ns)
+Vin2 2 0 DC 5 PULSE(0 5 0 0.1ns 0.1ns 100ns 200ns)
+m1 5 1 4 4 p1
+m2 3 2 5 4 p1
+.model p1 PMOS W=10u
+m3 3 2 0 0 n1
+m4 3 1 0 0 n1
+.model n1 NMOS W=1u
+Vdd 4 0 dc 5v
+
+.control
+set color0 = white
+
+tran 0.1m 0.2u 0
+plot V(1), 6 + V(2), 12 + V(3)
+set xbrushwidth = 2
+.endc

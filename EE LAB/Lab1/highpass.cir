@@ -1,0 +1,20 @@
+High Pass Filter
+*Resistor
+R1 2 0 5k
+*Capacitor
+C1 1 2 1.273n
+*Voltage
+Vin 1 0 dc 0 ac 1
+
+*Simulation
+.control
+
+ac dec 10 1 1Meg
+
+set color0 = white
+set color1 = black
+set color2 = blue
+
+plot vdb(2)
+.endc 
+ 

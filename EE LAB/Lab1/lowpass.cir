@@ -1,0 +1,19 @@
+Low Pass Filter
+*Resistor
+R1 1 2 5k
+*Capacitor
+C1 2 0 1061n
+*Voltage
+Vin 1 0 dc 0 ac 1
+
+*Simuation
+.control
+
+ac dec 10 1 1k
+
+set color0 = white
+set color1 = black
+set color2 = blue
+
+plot vdb(2)
+.endc 

@@ -1,0 +1,12 @@
+* C:\Users\Harshith\Desktop\IITH\Q2.asc
+V1 N001 0 2.5
+R1 N003 N004 2k
+D1 N004 0 D_14
+D2 N002 N003 D_14
+R2 N002 N001 2k
+.model D D
+.lib C:\Users\Harshith\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model D_14 D(IS = 0.01p)
+.op 10ms
+.backanno
+.end

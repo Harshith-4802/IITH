@@ -1,0 +1,35 @@
+Circuit: * C:\Users\Harshith\Desktop\IITH\VLSI\ASS2\Draft2.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+.step s=1
+.step s=2
+.step s=3
+.step s=4
+.step s=5
+.step s=6
+
+Date: Thu Nov 25 23:17:53 2021
+Total elapsed time: 0.793 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3586
+traniter = 3577
+tranpoints = 1612
+accept = 1550
+rejected = 62
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 132 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: 335 bytes object code size  0.1/0.1/[0.1]
+

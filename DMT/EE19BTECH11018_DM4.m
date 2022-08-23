@@ -1,0 +1,149 @@
+clc;clear;
+L = 1e5;
+data = randi([0,1],[1,L]);%Random bits
+snrdb = -5:0.5:10;%SNR in dB
+Es = 1;%Energy of signal
+x = zeros(1,L);%Recieved bits(After decision making)
+BER = zeros(1,31);%BIt error rate
+
+%--------------------BPSK-----------------------------
+ak = zeros(1,L);
+
+for p = 1:L
+  if data(p) == 0
+    ak(p) = 1;
+  elseif data(p) == 1
+    ak(p) = -1;
+  end
+end
+
+for q = 1:31
+  var = Es/10^(snrdb(q)/10);
+  sig = sqrt(var);
+  for p = 1:4
+    vk = randn([1,L])*sig;%AWGN
+    z = ak + vk;
+  end
+  
+  for p = 1:L
+    if z(p) > 0
+      x(p) = 0;  
+    else
+      x(p) = 1;
+    end
+  end
+  BER(q) = ((data-x)*(data-x)')/L;
+end
+
+plot(snrdb,BER);
+hold on;
+
+%------------------------4-FSK-----------------------
+ak = zeros(4,L/2);
+
+for p = 1:L/2
+  if data(2*p-1:2*p) == [0,0]
+    ak(:,p) = [1,0,0,0];
+  elseif data(2*p-1:2*p) == [0,1]
+    ak(:,p) = [0,1,0,0];
+  elseif data(2*p-1:2*p) == [1,1]
+    ak(:,p) = [0,0,1,0];
+  else
+    ak(:,p) = [0,0,0,1];
+  end
+end
+
+z = zeros(1,L/2);
+
+for q = 1:31
+  var = Es/10^(snrdb(q)/10);
+  sig = sqrt(var);
+  for p = 1:4
+    vk = randn([1,L/2])*sig;%AWGN
+    z(p,:) = ak(p,:) + vk;
+  end
+  
+  for p = 1:L/2
+    [m,index] = max(z(:,p));
+    if index == 1
+      x(2*p-1:2*p) = [0,0];
+    elseif index == 2
+      x(2*p-1:2*p) = [0,1];
+    elseif index == 3
+      x(2*p-1:2*p) = [1,1];
+    else
+      x(2*p-1:2*p) = [1,0];
+    end
+  end
+  BER(q) = ((data-x)*(data-x)')/L;
+end
+
+plot(snrdb,BER);
+
+%-----------------------16-QAM-----------------------------
+ak = zeros(2,L/4);
+
+for p = 1:L/4
+    
+    if data(4*p-1:4*p) == [0,0]
+    a = 1;
+  elseif data(4*p-1:4*p) == [0,1]
+    a = 2;
+  elseif data(4*p-1:4*p) == [1,1]
+    a = 3;
+  else
+    a = 4;
+    end
+  
+  if data(4*p-3:4*p-2) == [0,0]
+    b = 4;
+  elseif data(4*p-3:4*p-2) == [1,0]
+    b = 3;
+  elseif data(4*p-3:4*p-2) == [1,1]
+    b = 2;
+  else
+    b = 1;
+  end
+  
+ 
+  ak(:,p) = [2*a-1-4,2*b-1-4];
+end
+
+z = zeros(1,L/4);
+
+for q = 1:31
+  var = Es/10^(snrdb(q)/10);
+  sig = sqrt(var);
+  for p = 1:2
+    vk = randn([1,L/4])*sig;%AWGN
+    z(p,:) = ak(p,:) + vk;
+  end
+  
+  for p = 1:L/4
+    if z(1,p) <= -2
+      x(4*p-1:4*p) = [0,0];
+    elseif z(1,p) > -2 && z(1,p) <= 0
+      x(4*p-1:4*p) = [0,1];
+    elseif z(1,p) > 0 && z(1,p) <= 2
+      x(4*p-1:4*p) = [1,1];
+    else
+      x(4*p-1:4*p) = [1,0];
+    end
+    
+    if z(2,p) <= -2
+      x(4*p-3:4*p-2) = [0,1];
+    elseif z(2,p) <= 0 && z(2,p) > -2
+      x(4*p-3:4*p-2) = [1,1];
+    elseif z(2,p) <= 2 && z(2,p) > 0
+      x(4*p-3:4*p-2) = [1,0];
+    else
+      x(4*p-3:4*p-2) = [0,0];
+    end
+  end
+  
+  BER(q) = (data-x)*(data-x)'/L;
+end
+
+plot(snrdb,BER);
+legend("BPSK","4-FSK","16-QAM");
+set(gca,'Yscale','log');

@@ -1,0 +1,15 @@
+Negative clamper
+
+V1 1 0 sin(0 5 1000 0 0)
+C1 1 2 10u
+D1 2 0 diode
+.model diode d
+R1 2 0 10k
+
+.control
+set color0 = white
+set color1 = black
+
+tran 1u 4m 0
+plot v(2),v(1)
+.endc

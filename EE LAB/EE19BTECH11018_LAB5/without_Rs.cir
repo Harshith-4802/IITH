@@ -1,0 +1,18 @@
+Voltage Regulator without series resistance
+
+V1 1 0 sin(0,8,50)
+D1 1 2 diode
+D2 0 2 diode
+D3 3 0 diode
+D4 3 1 diode
+C1 2 3 150u
+DZ 3 2 zener
+R2 2 3 1K
+.model diode d
+.model zener d BV 5
+.control
+
+tran 1m 40m
+set color0 = white
+plot v(1) v(2,3)
+.endc

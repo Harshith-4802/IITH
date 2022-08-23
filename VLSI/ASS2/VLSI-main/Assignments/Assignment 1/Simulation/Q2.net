@@ -1,0 +1,12 @@
+* Z:\home\solomon\VLSI\Assignments\Assignment 1\Simulation\Q2.asc
+V1 N001 0 2.5
+R1 N002 N001 2k
+D1 N002 N003 ideal_diode
+R2 N003 N004 2k
+D2 N004 0 ideal_diode
+.model D D
+.lib C:\users\solomon\My Documents\LTspiceXVII\lib\cmp\standard.dio
+.model ideal_diode D (IS=0.01p)
+.tran 10m
+.backanno
+.end

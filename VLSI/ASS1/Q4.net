@@ -1,0 +1,12 @@
+* C:\Users\Harshith\Desktop\IITH\Q4.asc
+Vgs N002 0 {Vgs}
+Vds N001 0 1.8
+M1 N001 N002 0 0 nch_tt l=10u w=15u
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Harshith\Documents\LTspiceXVII\lib\cmp\standard.mos
+.include TSMC180.lib
+.step param Vgs list 0.4 0.5 0.6 0.7 0.8 0.9
+.dc Vds 0 1.8 1m
+.backanno
+.end

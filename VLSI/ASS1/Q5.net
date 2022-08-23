@@ -1,0 +1,8 @@
+* C:\Users\Harshith\Desktop\IITH\Q5.asc
+R1 Out N001 200
+V1 N001 0 PULSE(0 1 0 0.0001p 0 1)
+C1 Out 0 1p
+.tran 10n
+;.step param tr list 10p 20p 50p 100p 200p 500p 1n 2n 5n 10n
+.backanno
+.end

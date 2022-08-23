@@ -1,0 +1,57 @@
+Circuit: * C:\Users\Harshith\Desktop\Analog lab\LAB9\Draft2.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.6588
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 5.48561
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+Gmin = 5.49362
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+Ignoring empty pin current: Ix(u1:nc)
+
+Date: Thu Apr 22 21:53:40 2021
+Total elapsed time: 6.774 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 247134
+traniter = 245471
+tranpoints = 81195
+accept = 57468
+rejected = 23727
+matrix size = 142
+fillins = 947
+solver = Normal
+Thread vector: 16.4/8.8[2] 3.4/2.6[2] 4.0/3.0[2] 1.5/1.6[1]  2592/500
+Matrix Compiler1: 135.78 KB object code size  24.2/12.1/[5.2]
+Matrix Compiler2: 28.88 KB object code size  7.7/5.8/[3.3]
+

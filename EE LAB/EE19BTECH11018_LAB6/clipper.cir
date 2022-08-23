@@ -1,0 +1,18 @@
+Negative clipper
+
+V1 1 0 sin(0 5 1000 0 0)
+R1 1 2 100
+D1 2 3 diode
+D2 3 0 diode
+D3 4 2 diode
+D4 5 4 diode
+D5 0 5 diode
+.model diode d
+
+.control
+set color0 = white
+set color1 = black
+
+tran 1u 4m 0
+plot v(1),v(2)
+.endc

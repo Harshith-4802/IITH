@@ -1,0 +1,18 @@
+PMOSFET-Tranfer Characteristics
+
+Vgs 0 1 dc 0v
+m1 2 1 0 0 p1
+.model p1 PMOS
+R1 2 3 1k
+Vid 3 4 dc 0v
+Vdd 0 4 dc 5v
+*Vary Vdd from 1 to 5 manually
+
+.dc Vgs 0 5 0.05
+.control
+run
+
+set color0 = white
+plot Vid#branch vs v(1)
+print i(Vid)
+.endc

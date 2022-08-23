@@ -1,0 +1,9 @@
+* C:\Users\Harshith\Desktop\IITH\Q1.asc
+R1 Out N001 1k
+R2 0 N002 100
+C1 Out N002 1µ
+Vin N001 0 SINE(0 1 1Meg)
+;ac dec 300 1ms 1Megs
+.tran 3us
+.backanno
+.end

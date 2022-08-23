@@ -1,0 +1,41 @@
+Req charac netlist NMOS
+
+.include C:\Users\Harshith\Desktop\IITH\VLSI\ASS2\TSMC180.lib 
+.model nch_tt nmos
+
+M12 1 0 0 nch_tt W=0.24u L=0.18u
+
+Vdd 1 0 dc 1.8V
+
+Vm 2 3 dc OV
+
+C 3 0 1p IC=1.8V
+
+.control
+
+run
+
+tran 0.1n 10u uic
+
+let Id = (-i(Vm)) 
+
+let Req = v(3) / I * d
+
+plot v(3)
+
+plot Id vs v(3) 
+
+plot Req vs v(3)
+
+let dd = 1.8V
+
+let t1-0
+
+let v_dd2=0.9 
+
+meas tran t2 when v(3)=v_dd2 cross=1 
+
+meas tran Req AVG Req from=t1 to=t2
+
+.endc
+.end

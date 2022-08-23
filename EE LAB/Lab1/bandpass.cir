@@ -1,0 +1,24 @@
+Band Pass Filter
+*Resistor_1
+R1 2 0 1k
+*Capacitor_1
+C1 1 2 6.366n
+*Resistor_2
+R2 2 3 1k
+*Capacitor_2
+C2 3 0 5305n
+*Voltage
+Vin 1 0 dc 0 ac 1
+
+*Simulation
+.control
+
+ac dec 10 1 1Meg
+
+set color0 = white
+set color1 = black
+set color2 = blue
+*Comment
+plot vdb(3)
+.endc 
+ 

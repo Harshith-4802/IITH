@@ -1,0 +1,21 @@
+Circuit: * C:\Users\Harshith\Desktop\IITH\Analog\Project\Q1.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Mar 13 10:02:13 2021
+Total elapsed time: 4.594 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2251854
+traniter = 2251850
+tranpoints = 1114829
+accept = 889870
+rejected = 224959
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1: 156 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: off  [0.0]/0.1/0.0
+

@@ -1,0 +1,13 @@
+* Z:\home\solomon\VLSI\Assignments\Assignment 2\Simulation\Q5.asc
+M1 Vout N002 0 0 nch_tt W=450n L=180n
+Vgs N002 0 1.8
+R1 N001 Vout 75k
+Vdd N001 0 2.5
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\users\solomon\My Documents\LTspiceXVII\lib\cmp\standard.mos
+.include "TSMC180.lib"
+* W = 450nm, L = 180nm
+.dc Vgs 0 2.5 1m
+.backanno
+.end
